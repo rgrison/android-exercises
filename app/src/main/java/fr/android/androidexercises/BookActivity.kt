@@ -1,9 +1,12 @@
 package fr.android.androidexercises
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
+import kotlin.system.exitProcess
 
 class BookActivity : AppCompatActivity() {
 
@@ -19,7 +22,12 @@ class BookActivity : AppCompatActivity() {
         val sendNameButton = findViewById<Button>(R.id.sendNameButton)
         sendNameButton.setOnClickListener {
             // TODO set result to book name in intent
+            var result = Intent()
+            result.putExtra("bookName", bookName)
+            setResult(Activity.RESULT_OK, result)
+
             // TODO finish current activity
+            finish()
         }
     }
 }
