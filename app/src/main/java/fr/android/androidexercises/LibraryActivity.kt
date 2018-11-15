@@ -9,6 +9,10 @@ import android.widget.CheckBox
 
 class LibraryActivity : AppCompatActivity() {
 
+    companion object {
+        const val KEY = "checkBoxState"
+    }
+
     private var checkBox: CheckBox? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +26,14 @@ class LibraryActivity : AppCompatActivity() {
 
     public override fun onSaveInstanceState(outState: Bundle) {
         // TODO save check box state
+        checkBox?.apply { outState.putBoolean(KEY, isChecked) }
         super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         // TODO restore check box
+        checkBox?.apply { isChecked = savedInstanceState.getBoolean(KEY) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

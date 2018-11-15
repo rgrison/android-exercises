@@ -28,6 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding"
         android:hint="@string/hint_message"
-        android:saveEnabled="false"/>
+        android:saveEnabled="false"/> <!-- c'est ici que la magie opère. par défaut le composant sauvegarde son état mais pour les besoins de l'exercice on le désactive. -->
 
 </LinearLayout>
