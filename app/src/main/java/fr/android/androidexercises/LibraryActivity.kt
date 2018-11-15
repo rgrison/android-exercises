@@ -15,7 +15,9 @@ class LibraryActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
 
         val messageTextView = findViewById<TextView>(R.id.messageTextView)
+
         // TODO call text on messageTextView
+        messageTextView.text = "ce message vient du fichier Kotlin"
 
         setSupportActionBar(toolbar)
     }
